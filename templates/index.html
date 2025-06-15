@@ -1181,17 +1181,10 @@ body {
 </footer>
 
 <script>
-    // Load Navbar
-.footer-section {
-  opacity: 0;
-  transform: translateY(50px);
-  transition: opacity 1s ease, transform 1s ease;
-}
-
-.footer-section.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
+       document.addEventListener("DOMContentLoaded", function () {
+       document.querySelector('.footer-section').classList.add('visible');
+        });
+       
       // ✅ After navbar is loaded, highlight active link
       const currentPage = window.location.pathname.split("/").pop(); // e.g., index.html
       const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
