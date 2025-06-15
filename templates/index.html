@@ -1,0 +1,1211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CACI-USA | Home</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='static/styles/homepage.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='stati/styles/homepage2.css') }}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+  
+<!-- Required Font Awesome and Animate.css links -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<!-- Animate.css (Optional for fade-in) -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+<link rel="icon" href="https://res.cloudinary.com/dipvgaie7/image/upload/v1749906357/CAC-LOGO_egrhmz.webp" type="image/webp">
+  <style>
+    /* General */
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f4f7fb;
+  margin: 0;
+  padding-top: 80px; /* Adjust to your navbar height */
+}
+
+/* Navbar */
+.navbar {
+  background-color: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 0.5rem 1rem;
+   position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1050;
+}
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.navbar-brand img {
+  height: 55px;
+}
+
+.church-navbar-name {
+  font-size: 1rem;
+  font-weight: bold;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  line-height: 1.1;
+  white-space: nowrap;
+  overflow: hidden;
+  animation: typewriter 2.5s steps(40, end);
+}
+
+.church-navbar-name .blue {
+  color: #003366;
+}
+
+.church-navbar-name .highlight {
+  color: #cc9900;
+}
+
+@keyframes typewriter {
+  0% { width: 0; opacity: 0; }
+  100% { width: 100%; opacity: 1; }
+}
+
+
+/* Nav links */
+.navbar .nav-link {
+  color: #003366 !important;
+  font-weight: 600;
+  margin-left: 14px;
+  transition: 0.3s ease;
+  position: relative;
+}
+
+.navbar .nav-link:hover,
+.navbar .nav-link.active {
+  color: #cc9900 !important;
+}
+
+.navbar .nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #cc9900;
+  transition: 0.3s;
+}
+
+.navbar .nav-link:hover::after {
+  width: 100%;
+}
+
+/* Dropdown hover */
+.nav-item.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+.dropdown-menu {
+  background-color: #000;
+  border: none;
+}
+
+.dropdown-item {
+  color: #fff;
+  font-weight: 500;
+  transition: background 0.3s;
+}
+
+.dropdown-item:hover {
+  background-color: #333;
+}
+
+/* Hamburger full screen menu */
+@media (max-width: 991px) {
+  .navbar-collapse {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgb(21, 56, 117);
+    padding-top: 80px;
+    z-index: 999;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    transition: all 0.4s ease;
+    animation: fadeSlideDown 0.5s ease-in;
+  }
+
+  .navbar-collapse.collapsing,
+  .navbar-collapse.show.removing {
+    animation: fadeOutSlideUp 0.4s ease forwards;
+  }
+
+  .navbar-nav {
+    width: 100%;
+    padding-left: 30px;
+  }
+
+  .navbar-nav .nav-link {
+    font-size: 1.2rem;
+    color: white !important;
+    padding: 12px 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    animation: slideIn 0.5s ease forwards;
+  }
+
+  .navbar-nav .nav-link i {
+    font-size: 1.3rem;
+    color: #cc9900;
+  }
+
+  .close-btn {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 2rem;
+    color: #fff;
+    background: none;
+    border: none;
+    z-index: 1001;
+    transition: transform 0.2s ease;
+  }
+
+  .close-btn:hover {
+    transform: scale(1.2);
+    color: #cc9900;
+  }
+
+  .dropdown-menu {
+    background-color: #111;
+    border: none;
+  }
+
+  .dropdown-item {
+    color: #fff;
+    padding-left: 40px;
+  }
+
+  .mobile-contact-info {
+    padding: 20px 30px;
+    color: white;
+    font-size: 0.95rem;
+  }
+
+  .mobile-contact-info p {
+    margin: 5px 0;
+  }
+
+  .mobile-contact-icons {
+    display: flex;
+    gap: 20px;
+    margin-top: 10px;
+  }
+
+  .mobile-contact-icons a img {
+    height: 22px;
+    width: 22px;
+  }
+}
+
+/* Animations */
+@keyframes fadeSlideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeOutSlideUp {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-40px);
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(-20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translate(-50%, -40%); }
+  to { opacity: 1; transform: translate(-50%, -50%); }
+}
+
+/* Carousel */
+.carousel-container {
+  max-width: 1100px;
+  margin: 40px auto;
+  padding: 0 15px;
+}
+
+.carousel-item {
+  position: relative;
+}
+
+.carousel-inner img {
+  width: 100%;
+  max-height: 700px;
+  object-fit: cover;
+  border-radius: 8px;
+  background-color: #000;
+}
+
+.carousel-item::after {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0, 0, 0, 0.12);
+  backdrop-filter: blur(0.5px);
+  z-index: 1;
+  border-radius: 8px;
+}
+
+/* Theme Tag */
+.theme-tag {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background-color: #003366;
+  color: #fff;
+  padding: 6px 14px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: 5px;
+  z-index: 3;
+}
+
+/* Carousel Caption */
+.carousel-caption {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  text-align: center;
+  width: 100%;
+  padding: 0 20px;
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+.theme-verse-main {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 15px;
+  text-shadow: 2px 2px 6px rgba(0,0,0,0.6);
+}
+
+.theme-verse-ref {
+  display: inline-block;
+  background-color: #c82333;
+  color: #fff;
+  padding: 8px 16px;
+  font-size: 1rem;
+  font-weight: 500;
+  border-radius: 6px;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.3);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .church-navbar-name {
+    font-size: 1rem;
+    white-space: normal;
+    text-align: left;
+  }
+
+  .theme-tag {
+    font-size: 0.9rem;
+    padding: 4px 10px;
+  }
+
+  .theme-verse-main {
+    font-size: 1.3rem;
+  }
+
+  .theme-verse-ref {
+    font-size: 0.9rem;
+    padding: 6px 12px;
+  }
+
+  .carousel-inner img {
+    max-height: 350px;
+  }
+}
+.church-navbar-name {
+  font-size: 1rem;
+  font-weight: bold;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  line-height: 1.2;
+  white-space: normal; /* ensure wrapping */
+  animation: typewriter 2.5s steps(40, end);
+}
+
+.navbar-nav {
+  padding-right: 20px;
+}
+.navbar .nav-link {
+  transition: color 0.3s, transform 0.3s;
+}
+.navbar .nav-link:hover {
+  transform: translateY(-2px);
+}
+church-navbar-name small.church-subtitle {
+  display: block;
+  font-size: 0.7rem;
+  font-weight: 400;
+  color: rgba(0, 0, 0, 0.5);
+  margin-top: 1px;
+  letter-spacing: 0.3px;
+}
+.vision-mission-values-section {
+  background: linear-gradient(to right, #1c1c2b, #24243e);
+  padding: 80px 20px;
+  color: #f0f0f0;
+  position: relative;
+  overflow: hidden;
+  min-height: 100vh;
+}
+
+.section-heading {
+  margin-bottom: 50px;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+.section-subtitle {
+  font-size: 1.1rem;
+  color: #cccccc;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* Scroll Slider Container */
+.scroll-slider {
+  position: relative;
+  height: 420px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Belief Slide */
+.belief-slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transform: translateY(100%);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 30px 20px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+  backdrop-filter: blur(4px);
+}
+
+.belief-slide.active {
+  opacity: 1;
+  transform: translateY(0);
+  z-index: 2;
+}
+
+.belief-slide.out-up {
+  transform: translateY(-100%);
+  opacity: 0;
+  z-index: 1;
+}
+
+.belief-slide.out-down {
+  transform: translateY(100%);
+  opacity: 0;
+  z-index: 1;
+}
+
+/* Icon Styling */
+.belief-slide .icon {
+  margin-bottom: 20px;
+}
+
+.belief-slide .icon i {
+  font-size: 3rem;
+  color: #f39c12; /* default color, can be overridden individually via class */
+}
+
+.belief-slide h3 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-bottom: 15px;
+  color: #ffffff;
+}
+
+.belief-slide p {
+  font-size: 1rem;
+  color: #dddddd;
+  line-height: 1.6;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .section-title {
+    font-size: 2rem;
+  }
+
+  .scroll-slider {
+    height: 420px;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .belief-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transform: translateY(100%);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+    width: 100%;
+    padding: 30px 20px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    backdrop-filter: blur(4px);
+  }
+
+  .belief-slide.active {
+    opacity: 1;
+    transform: translateY(0);
+    z-index: 2;
+  }
+
+  .belief-slide.out-up {
+    transform: translateY(-100%);
+    opacity: 0;
+    z-index: 1;
+  }
+
+  .belief-slide.out-down {
+    transform: translateY(100%);
+    opacity: 0;
+    z-index: 1;
+  }
+}
+.swipe-indicator {
+  position: absolute;
+  bottom: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  color: #cccccc;
+  font-size: 0.9rem;
+  z-index: 5;
+  animation: bounce 2s infinite;
+}
+
+.swipe-indicator i {
+  display: block;
+  font-size: 1.5rem;
+  margin-bottom: 5px;
+  color: #f39c12;
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateX(-50%) translateY(0);
+  }
+  40% {
+    transform: translateX(-50%) translateY(6px);
+  }
+  60% {
+    transform: translateX(-50%) translateY(3px);
+  }
+}
+.nav-link.active {
+  font-weight: bold;
+  color: #0d6efd !important;
+  border-bottom: 2px solid #0d6efd;
+}
+/* Import Roboto Font */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+/* The Church Section */
+.church-about-section {
+  background: url('https://res.cloudinary.com/dljpgzbto/image/upload/v1749700676/istockphoto-2183882967-612x612_b8alxq.jpg') no-repeat center center/cover;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 80vh;
+  opacity: 0;
+  transform: translateY(60px);
+  transition: all 1s ease;
+}
+
+.church-about-section.animate {
+  opacity: 1;
+  transform: translateY(0);
+}
+.church-subtitle{
+  color: #514b4bde;
+}
+.church-about-overlay {
+  background-color: rgba(0, 0, 0, 0.65);
+  backdrop-filter: blur(8px);
+  padding: 60px 20px;
+  width: 100%;
+  text-align: center;
+  border-radius: 12px;
+}
+
+.church-logo {
+  width: 100px;
+  height: auto;
+}
+
+.church-title {
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #ffffff;
+}
+
+.church-description {
+  font-size: 1.05rem;
+  max-width: 750px;
+  margin: auto;
+  line-height: 1.8;
+  color: #f0f0f0;
+}
+
+.btn-light {
+  font-weight: 600;
+  padding: 10px 20px;
+  border-radius: 8px;
+  transition: 0.3s ease;
+}
+
+.btn-light:hover {
+  background-color: #f8f9fa;
+  color: #003366;
+}
+
+.btn-warning {
+  font-weight: 600;
+  padding: 10px 22px;
+  border-radius: 8px;
+  color: #222;
+  background-color: #ffc107;
+  transition: 0.3s ease;
+}
+
+.btn-warning:hover {
+  background-color: #e0a800;
+  color: #000;
+}
+
+/* Church News Section */
+.church-news-section {
+  background-color: #ffffff;
+  padding: 60px 20px;
+}
+
+.news-icon {
+  color: #003366;
+}
+
+.news-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+  color: #003366;
+}
+
+.news-text {
+  font-size: 1rem;
+  max-width: 700px;
+  margin: auto;
+  color: #555555;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .church-title {
+    font-size: 1.8rem;
+  }
+
+  .church-description {
+    font-size: 1rem;
+  }
+
+  .church-logo {
+    width: 80px;
+  }
+
+  .news-title {
+    font-size: 1.5rem;
+  }
+}
+/* Church About Section */
+.church-about-section {
+  background: url('https://res.cloudinary.com/dljpgzbto/image/upload/v1749700676/istockphoto-2183882967-612x612_b8alxq.jpg') no-repeat center center/cover;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 80vh;
+  font-family: 'Roboto', sans-serif;
+}
+
+.church-about-overlay {
+  background-color: rgba(0, 0, 0, 0.65);
+  backdrop-filter: blur(8px);
+  padding: 60px 20px;
+  width: 100%;
+  text-align: center;
+}
+
+.church-logo {
+  width: 100px;
+  height: auto;
+}
+
+.church-title {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.church-description {
+  font-size: 1.05rem;
+  max-width: 750px;
+  margin: auto;
+  color: #f0f0f0;
+  line-height: 1.8;
+}
+
+/* Why Worship With Us Section */
+.why-worship-section {
+  background: linear-gradient(to right, #fdfbfb, #f1f3f5);
+  padding: 80px 20px;
+  font-family: 'Roboto', sans-serif;
+}
+
+.worship-title {
+  font-size: 2.2rem;
+  font-weight: bold;
+  color: #003366;
+}
+
+.worship-subtitle {
+  font-size: 1.1rem;
+  max-width: 700px;
+  margin: 0 auto 40px;
+  color: #333;
+}
+
+.worship-slider {
+  position: relative;
+  height: 400px;
+  overflow: hidden;
+}
+
+.worship-slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  border-radius: 12px;
+  padding: 40px 30px;
+  opacity: 0;
+  transform: translateY(100%);
+  transition: all 0.6s ease;
+}
+
+.worship-slide.active {
+  opacity: 1;
+  transform: translateY(0);
+  z-index: 2;
+}
+
+.worship-slide.out-up {
+  transform: translateY(-100%);
+  opacity: 0;
+}
+
+.worship-slide.out-down {
+  transform: translateY(100%);
+  opacity: 0;
+}
+
+/* Dots */
+.worship-dots {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.dot {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background-color: #ccc;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.dot:hover,
+.active-dot {
+  background-color: #003366;
+}
+
+@media (max-width: 768px) {
+  .worship-slide {
+    position: static;
+    opacity: 1 !important;
+    transform: none !important;
+    margin-bottom: 30px;
+    background: transparent;
+    box-shadow: none;
+  }
+
+  .worship-slider {
+    height: auto;
+  }
+}
+/* Modal Base */
+.verse-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(8px);
+  background-color: rgba(255, 255, 255, 0.3); /* White transparent */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+
+.verse-modal-content {
+  background-color: #fff;
+  padding: 0;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 500px;
+  box-shadow: 0 0 30px rgba(0,0,0,0.5);
+  position: relative;
+}
+
+.close-verse {
+  position: absolute;
+  top: 8px;
+  right: 12px;
+  background: transparent;
+  font-size: 28px;
+  border: none;
+  cursor: pointer;
+  color: #000;
+  z-index: 1;
+}
+
+.animate-left {
+  animation: slideInLeft 0.7s ease forwards;
+}
+
+@keyframes slideInLeft {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.hidden {
+  display: none;
+}
+
+.bible-verse-section {
+  opacity: 0;
+  transform: translateY(100px);
+  transition: all 1s ease;
+}
+
+.bible-verse-section.slide-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+.bible-verse-section {
+  opacity: 0;
+  transform: translateX(100px);
+  transition: all 0.8s ease-out;
+}
+
+.bible-verse-section.slide-in {
+  opacity: 1;
+  transform: translateX(0);
+}
+.gallery-img {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery-img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+.gallery-img {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.gallery-img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(44, 9, 245, 0.15);
+}
+.gallery-img {
+  transition: opacity 0.6s ease-in-out;
+  opacity: 1;
+}
+
+.gallery-img.fade-out {
+  opacity: 0;
+}
+.footer-section a:hover {
+  color: #ffc107 !important;
+  text-decoration: none;
+}
+.footer-section {
+  background-color: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(12px);
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+.footer-section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+  </style>
+</head>
+<body>
+
+  {% include 'navbar.html' %}
+
+
+  <!-- Carousel -->
+  <div class="carousel-container">
+    <div id="caciCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
+      <div class="carousel-inner">
+        <!-- New first image without text -->
+        <div class="carousel-item active">
+          <img src="https://res.cloudinary.com/dljpgzbto/image/upload/v1749697531/theme_nznwqh.png" class="d-block w-100" alt="Slogan Slide">
+        </div>
+
+        <!-- Existing slides -->
+        <div class="carousel-item">
+          <img src="https://res.cloudinary.com/dljpgzbto/image/upload/v1749692378/women_tql1o3.png" class="d-block w-100" alt="Slide 1">
+          <div class="theme-tag">Theme for 2025</div>
+          <div class="carousel-caption">
+            <div class="theme-verse-main">Arise and Build the Kingdom of God</div>
+            <div class="theme-verse-ref">Nehemiah 2:17–18</div>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="https://res.cloudinary.com/dljpgzbto/image/upload/v1749691933/IMG_0198-300x200_ik6qgt.webp" class="d-block w-100" alt="Slide 2">
+          <div class="theme-tag">Theme for 2025</div>
+          <div class="carousel-caption">
+            <div class="theme-verse-main">Arise and Build the Kingdom of God</div>
+            <div class="theme-verse-ref">Nehemiah 2:17–18</div>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="https://res.cloudinary.com/dljpgzbto/image/upload/v1749691751/IMG_2200-300x200_hh0ufh.webp" class="d-block w-100" alt="Slide 3">
+          <div class="theme-tag">Theme for 2025</div>
+          <div class="carousel-caption">
+            <div class="theme-verse-main">Arise and Build the Kingdom of God</div>
+            <div class="theme-verse-ref">Nehemiah 2:17–18</div>
+          </div>
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#caciCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#caciCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon"></span>
+      </button>
+    </div>
+  </div>
+<!-- Vision, Mission, Core Values Circle Carousel Section -->
+<section class="vision-mission-values-section">
+  <div class="container text-center">
+    <div class="section-heading mb-4">
+      <h2 class="section-title">Our Beliefs</h2>
+      <p class="section-subtitle">Guided by a divine purpose, we are rooted in Vision, Mission, Core Values, and Tenets of Faith.</p>
+    </div>
+
+    <div class="scroll-slider">
+      <div class="belief-slide active" id="vision">
+        <div class="icon text-primary"><i class="fas fa-eye fa-3x"></i></div>
+        <h3>Our Vision</h3>
+        <p>Knowing Christ and making disciples of all nations, tribes, and peoples constituting them into Bible-believing Church for the worship, edification, and evangelization of the world.</p>
+      </div>
+
+      <div class="belief-slide" id="mission">
+        <div class="icon text-success"><i class="fas fa-cross fa-3x"></i></div>
+        <h3>Our Mission</h3>
+        <p>We are on a mission to serve and do the work of God, bringing joy and salvation to all people and bringing them closer to God.</p>
+      </div>
+
+      <div class="belief-slide" id="values">
+        <div class="icon text-danger"><i class="fas fa-heart fa-3x"></i></div>
+        <h3>Our Core Values</h3>
+        <p>The unity of the Godhead and the Trinity of the persons therein. The utter depravity of human nature, the necessity for Repentance and Regeneration, and the Eternal Doom of the finally impenitent.</p>
+      </div>
+
+      <div class="belief-slide" id="tenets">
+        <div class="icon text-warning"><i class="fas fa-book-bible fa-3x"></i></div>
+        <h3>Church Tenets</h3>
+        <p>The Unity of the Godhead and the Trinity of the persons therein. The utter depravity of human nature, the necessity for repentance and Regeneration, and the Eternal Doom of the finally impenitent.</p>
+      </div>
+
+      <!-- Swipe Indicator -->
+      <div class="swipe-indicator">
+        <i class="fas fa-chevron-down"></i>
+        <p>Swipe or scroll to explore</p>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="church-about-section">
+  <div class="church-about-overlay">
+    <div class="container text-center">
+      <img src="https://res.cloudinary.com/dljpgzbto/image/upload/v1749700775/CACI-USA-288x300_ol5tcl.webp" alt="CACI Logo" class="church-logo mb-4">
+      <h2 class="church-title">The Church</h2>
+      <p class="church-description">
+        The Christ Apostolic Church International (CAC), a non-governmental organisation, was founded by Apostle Peter Anim. He and his Faith Tabernacle Church (which later became known as the Christ Apostolic Church) are credited with the origins of Classical Pentecostalism in Ghana. An interest in a Christian periodical, "The Sword of the Spirit", led him to fraternize, through correspondence, with its editor, Pastor A. Clark, founder of the Faith Tabernacle Church, Philadelphia.
+      </p>
+      <div class="d-flex justify-content-center flex-wrap gap-3 mt-4">
+        <a href="{{ url_for('aboutus') }}#what-we-do"class="btn btn-outline-light fw-bold">
+          <i class="fas fa-book-open me-2"></i> Read More
+        </a>
+        <a href="{{ url_for('add_post.blog') }}" class="btn btn-warning fw-bold text-dark">
+          <i class="fas fa-newspaper me-2"></i> Church News
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="why-worship-section">
+  <div class="container text-center">
+    <h2 class="worship-title">Why Worship With Us</h2>
+    <p class="worship-subtitle">Experience spiritual growth, deep fellowship, and divine direction through Christ Apostolic Church Int.</p>
+    
+    <div class="worship-slider">
+      <div class="worship-slide active">
+        <div class="icon text-primary"><i class="fas fa-bible fa-3x"></i></div>
+        <h4>Moral and Ethical Guidance</h4>
+        <p>
+          CACI fosters spiritual growth through sermons, prayer, and scripture, helping members live with strong ethical values and purpose.
+        </p>
+      </div>
+      <div class="worship-slide">
+        <div class="icon text-success"><i class="fas fa-users fa-3x"></i></div>
+        <h4>Community and Fellowship</h4>
+        <p>
+          A vibrant family rooted in love, CACI offers emotional support and lifelong relationships built through shared worship and service.
+        </p>
+      </div>
+      <div class="worship-slide">
+        <div class="icon text-warning"><i class="fas fa-church fa-3x"></i></div>
+        <h4>Spiritual Growth and Worship</h4>
+        <p>
+          CACI cultivates virtues like compassion and generosity, shaping members to lead lives grounded in integrity and divine calling.
+        </p>
+      </div>
+    </div>
+
+    <!-- Navigation Dots -->
+    <div class="worship-dots mt-4">
+      <span class="dot active-dot" data-index="0"></span>
+      <span class="dot" data-index="1"></span>
+      <span class="dot" data-index="2"></span>
+    </div>
+  </div>
+</section>
+<!-- Daily Bible Verse Section -->
+<!-- Daily Bible Verse Section -->
+<section class="bible-verse-section py-5" style="background: #f7f9fc;">
+  <div class="container text-center">
+    <div class="verse-wrapper mx-auto" style="max-width: 600px;">
+      <iframe width="100%" height="500px" frameborder="0" scrolling="no" 
+              src="https://www.bibliatodo.com/en/online/versiculo-del-dia"
+              style="border-radius: 12px; box-shadow: 0 0 20px rgba(0,0,0,0.1); background: #fff;">
+      </iframe>
+    </div>
+  </div>
+</section>
+
+<!-- Brief Gallery Section with Rotating Grid -->
+<section class="brief-gallery-section py-5 bg-light">
+  <div class="container text-center">
+    <h2 class="mb-4 text-dark">Church Moments</h2>
+    <p class="mb-4 text-muted">A glimpse into some beautiful moments of worship, fellowship, and love.</p>
+
+    <div class="row g-4 justify-content-center" id="gallery-grid">
+      <div class="col-6 col-md-3">
+        <img class="gallery-img img-fluid rounded shadow-sm" data-index="0" src="https://res.cloudinary.com/dipvgaie7/image/upload/v1749906140/moment_i8va4a.webp" alt="Gallery Image 1">
+      </div>
+      <div class="col-6 col-md-3">
+        <img class="gallery-img img-fluid rounded shadow-sm" data-index="1" src="https://res.cloudinary.com/dipvgaie7/image/upload/v1749905749/gallery2_lh205q.webp" alt="Gallery Image 2">
+      </div>
+      <div class="col-6 col-md-3">
+        <img class="gallery-img img-fluid rounded shadow-sm" data-index="2" src="https://res.cloudinary.com/dipvgaie7/image/upload/v1749905749/galler3_dwe80u.webp" alt="Gallery Image 3">
+      </div>
+      <div class="col-6 col-md-3">
+        <img class="gallery-img img-fluid rounded shadow-sm" data-index="3" src="https://res.cloudinary.com/dipvgaie7/image/upload/v1749905749/galery6_dy0lra.webp" alt="Gallery Image 4">
+      </div>
+    </div>
+
+    <div class="mt-5">
+      <a href="/gallery" class="btn btn-primary btn-lg shadow-sm">
+        <i class="fas fa-images me-2"></i> View More
+      </a>
+    </div>
+  </div>
+</section>
+{% if popup %}
+<div id="eventModal" class="verse-modal hidden">
+  <div class="verse-modal-content animate-left">
+    <button class="close-verse" onclick="closeVerseModal()">&times;</button>
+    <img src="{{ popup.image_url }}" alt="Upcoming Event" style="width: 100%; height: auto; border-radius: 10px;" />
+  </div>
+</div>
+{% endif %}
+
+
+  <footer id="site-footer" class="footer-section text-dark pt-5 pb-3">
+  <div class="container">
+    <div class="row text-center text-md-start align-items-center gy-4">
+      <!-- Logo and Name -->
+      <div class="col-md-4">
+        <div class="d-flex align-items-center justify-content-center justify-content-md-start">
+          <img src="https://res.cloudinary.com/dipvgaie7/image/upload/v1749906357/CAC-LOGO_egrhmz.webp" alt="CACI Logo" width="60" height="60" class="me-2">
+          <div>
+            <h5 class="mb-0">Christ Apostolic Church</h5>
+            <small>International – USA</small>
+            <a href="/login" class="btn btn-info text-white fw-semibold px-4 py-2 rounded-pill">Portal</a>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- Contact Info -->
+      <div class="col-md-4 text-center">
+        <p class="mb-1"><strong>Address:</strong> 483 East Tremont Ave, Bronx NY 10457</p>
+        <p class="mb-1"><strong>Email:</strong> <a href="mailto:info@caciusa.org" class="text-dark text-decoration-underline">info@caciusa.org</a></p>
+        <p class="mb-1"><strong>Phone:</strong> 123-456-7890</p>
+        <p class="mb-0"><strong>Hours:</strong> Mon–Fri 9:00AM – 5:00PM</p>
+      </div>
+
+      <!-- Social Links -->
+      <div class="col-md-4 text-center text-md-end">
+        <p class="mb-2">Follow Us:</p>
+        <a href="https://www.facebook.com/share/1AnA9qxJFH/?mibextid=wwXIfr" target="_blank" class="text-dark me-3 fs-4"><i class="fab fa-facebook"></i></a>
+        <a href="https://www.instagram.com/caciusa?igsh=MXdyNzNvdWJuY3FyYg==" target="_blank" class="text-dark me-3 fs-4"><i class="fab fa-instagram"></i></a>
+        <a href="https://youtube.com/@caciusamedia?si=aTtZWA2k9aU9ugaP" target="_blank" class="text-dark fs-4"><i class="fab fa-youtube"></i></a>
+      </div>
+    </div>
+
+    <hr class="border-secondary my-4">
+
+    <div class="text-center small">
+      &copy; <span id="year"></span> Christ Apostolic Church International – USA. All rights reserved. <br>
+      Website by <a href="mailto:cytech76@gmail.com" class="text-primary fw-bold text-decoration-none">CYTECH</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+    // Load Navbar
+   fetch("navbar.html")
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById("navbar-placeholder").innerHTML = data;
+
+      // ✅ After navbar is loaded, highlight active link
+      const currentPage = window.location.pathname.split("/").pop(); // e.g., index.html
+      const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
+
+      navLinks.forEach(link => {
+        const href = link.getAttribute('href');
+        if (href && currentPage === href) {
+          link.classList.add('active');
+        }
+      });
+    });
+
+document.addEventListener("DOMContentLoaded", function () {
+    document.getElementById("year").textContent = new Date().getFullYear();
+  });  
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="{{ url_for('static', filename='js/homepage.js') }}"></script>
+</body>
+</html>

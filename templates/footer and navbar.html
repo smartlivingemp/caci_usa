@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CACI-USA | Leadership</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="styles/homepage.css" />
+    <link rel="stylesheet" href="styles/homepage2.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+  
+<!-- Required Font Awesome and Animate.css links -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<!-- Animate.css (Optional for fade-in) -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+<link rel="icon" href="https://res.cloudinary.com/dipvgaie7/image/upload/v1749906357/CAC-LOGO_egrhmz.webp" type="image/webp">
+  <style>
+    
+  </style>
+</head>
+<body>
+
+    <div id="navbar-placeholder"></div>
+
+
+  <footer id="site-footer" class="footer-section text-dark pt-5 pb-3">
+  <div class="container">
+    <div class="row text-center text-md-start align-items-center gy-4">
+      <!-- Logo and Name -->
+      <div class="col-md-4">
+        <div class="d-flex align-items-center justify-content-center justify-content-md-start">
+          <img src="https://res.cloudinary.com/dipvgaie7/image/upload/v1749906357/CAC-LOGO_egrhmz.webp" alt="CACI Logo" width="60" height="60" class="me-2">
+          <div>
+            <h5 class="mb-0">Christ Apostolic Church</h5>
+            <small>International – USA</small>
+          </div>
+        </div>
+      </div>
+
+      <!-- Contact Info -->
+      <div class="col-md-4 text-center">
+        <p class="mb-1"><strong>Address:</strong> 483 East Tremont Ave, Bronx NY 10457</p>
+        <p class="mb-1"><strong>Email:</strong> <a href="mailto:info@caciusa.org" class="text-dark text-decoration-underline">info@caciusa.org</a></p>
+        <p class="mb-1"><strong>Phone:</strong> 123-456-7890</p>
+        <p class="mb-0"><strong>Hours:</strong> Mon–Fri 9:00AM – 5:00PM</p>
+      </div>
+
+      <!-- Social Links -->
+      <div class="col-md-4 text-center text-md-end">
+        <p class="mb-2">Follow Us:</p>
+        <a href="https://www.facebook.com/share/1AnA9qxJFH/?mibextid=wwXIfr" target="_blank" class="text-dark me-3 fs-4"><i class="fab fa-facebook"></i></a>
+        <a href="https://www.instagram.com/caciusa?igsh=MXdyNzNvdWJuY3FyYg==" target="_blank" class="text-dark me-3 fs-4"><i class="fab fa-instagram"></i></a>
+        <a href="https://youtube.com/@caciusamedia?si=aTtZWA2k9aU9ugaP" target="_blank" class="text-dark fs-4"><i class="fab fa-youtube"></i></a>
+      </div>
+    </div>
+
+    <hr class="border-secondary my-4">
+
+    <div class="text-center small">
+      &copy; <span id="year"></span> Christ Apostolic Church International – USA. All rights reserved. <br>
+      Website by <a href="mailto:cytech76@gmail.com" class="text-primary fw-bold text-decoration-none">CYTECH</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+    // Load Navbar
+  fetch("navbar.html")
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById("navbar-placeholder").innerHTML = data;
+    });
+
+ document.addEventListener("DOMContentLoaded", function () {
+    document.getElementById("year").textContent = new Date().getFullYear();
+  });
+  
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/homepage.js"></script>
+</body>
+</html>

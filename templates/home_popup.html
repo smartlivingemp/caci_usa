@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Update Home Popup</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
+  <link rel="icon" href="https://res.cloudinary.com/dipvgaie7/image/upload/v1749906357/CAC-LOGO_egrhmz.webp" type="image/webp">
+  <style>
+    body {
+      background: #f4f4f4;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    .navbar {
+      background-color: #ffffff !important;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    }
+
+    .navbar .nav-link {
+      color: #333 !important;
+    }
+
+    .navbar .nav-link.btn-primary {
+      color: #fff !important;
+    }
+
+    .navbar-brand img {
+      height: 40px;
+      margin-right: 10px;
+    }
+
+    .container {
+      max-width: 500px;
+      background: white;
+      margin-top: 80px;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    }
+
+    .img-preview {
+      width: 100%;
+      max-height: 300px;
+      object-fit: contain;
+      border-radius: 8px;
+      margin-bottom: 15px;
+    }
+
+    .btn-primary {
+      background: #003366;
+      border: none;
+    }
+
+    .btn-primary:hover {
+      background: #0055aa;
+    }
+
+    .updated-date {
+      font-size: 0.85rem;
+      color: #555;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .footer {
+      margin-top: 60px;
+      text-align: center;
+      font-size: 0.95rem;
+      color: #555;
+      padding: 20px;
+      background-color: #fff;
+      border-top: 1px solid #ccc;
+    }
+
+    .footer a {
+      color: #004080;
+      text-decoration: none;
+    }
+
+    .footer a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light">
+  <div class="container">
+    <a class="navbar-brand d-flex align-items-center" href="#">
+      <img src="https://res.cloudinary.com/dipvgaie7/image/upload/v1749906357/CAC-LOGO_egrhmz.webp" alt="CAC Logo">
+      <strong>CACI Admin</strong>
+    </a>
+    <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div id="navbarNav" class="collapse navbar-collapse">
+      <ul class="navbar-nav ms-auto gap-2">
+        <li class="nav-item">
+          <a href="/admin-dashboard" class="nav-link">Dashboard</a>
+        </li>
+        <li class="nav-item">
+          <a href="/leadership" class="btn btn-primary text-white px-3 py-1">Visit Page</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Main Content -->
+<div class="container">
+  <h4 class="text-center mb-4">Update Home Page Popup Image</h4>
+
+  {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+      {% for category, message in messages %}
+        <div class="alert alert-{{ category }}">{{ message }}</div>
+      {% endfor %}
+    {% endif %}
+  {% endwith %}
+
+  {% if current %}
+    <img id="popup_preview" src="{{ current.image_url }}" alt="Current Popup" class="img-preview">
+    <div class="updated-date">
+      <strong>Last Updated:</strong>
+      {{ current.updated_at.strftime('%B %d, %Y at %I:%M %p') }}
+    </div>
+  {% else %}
+    <img id="popup_preview" src="https://via.placeholder.com/500x300" alt="Popup Preview" class="img-preview">
+  {% endif %}
+
+  <form method="POST">
+    <div class="mb-3">
+      <label class="form-label">Upload New Image</label>
+      <input type="file" class="form-control" onchange="uploadImage(this)" />
+      <input type="hidden" name="image_url" id="image_url" />
+      <small id="uploadStatus" class="text-success d-block mt-2"></small>
+    </div>
+    <div class="d-grid">
+      <button type="submit" class="btn btn-primary">Save Popup</button>
+    </div>
+  </form>
+</div>
+
+<!-- Footer -->
+<div class="footer">
+  &copy; <span id="year"></span> Christ Apostolic Church International – USA. All rights reserved. <br>
+  Website by <a href="mailto:cytech76@gmail.com">CYTECH</a>
+</div>
+
+<!-- Script -->
+<script>
+  const cloudName = 'dipvgaie7';
+  const uploadPreset = 'caci_usa';
+
+  function uploadImage(input) {
+    const file = input.files[0];
+    if (!file) return;
+
+    const formData = new FormData();
+    formData.append('file', file);
+    formData.append('upload_preset', uploadPreset);
+
+    document.getElementById("uploadStatus").innerText = "Uploading...";
+
+    fetch(`https://api.cloudinary.com/v1_1/${cloudName}/image/upload`, {
+      method: 'POST',
+      body: formData
+    })
+    .then(res => res.json())
+    .then(data => {
+      document.getElementById("image_url").value = data.secure_url;
+      document.getElementById("popup_preview").src = data.secure_url;
+      document.getElementById("uploadStatus").innerText = "Image uploaded!";
+    })
+    .catch(err => {
+      console.error('Upload Error:', err);
+      document.getElementById("uploadStatus").innerText = "Upload failed. Try again.";
+    });
+  }
+
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+</body>
+</html>

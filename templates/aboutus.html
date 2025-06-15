@@ -1,0 +1,1610 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CACI-USA | About US</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='static/styles/homepage.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='stati/styles/homepage2.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='stati/styles/aboutus.css') }}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+  
+<!-- Required Font Awesome and Animate.css links -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<!-- Animate.css (Optional for fade-in) -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+<link rel="icon" href="https://res.cloudinary.com/dipvgaie7/image/upload/v1749906357/CAC-LOGO_egrhmz.webp" type="image/webp">
+  <style>
+    /* General */
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f4f7fb;
+  margin: 0;
+  padding-top: 80px; /* Adjust to your navbar height */
+}
+
+/* Navbar */
+.navbar {
+  background-color: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 0.5rem 1rem;
+   position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1050;
+}
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.navbar-brand img {
+  height: 55px;
+}
+
+.church-navbar-name {
+  font-size: 1rem;
+  font-weight: bold;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  line-height: 1.1;
+  white-space: nowrap;
+  overflow: hidden;
+  animation: typewriter 2.5s steps(40, end);
+}
+
+.church-navbar-name .blue {
+  color: #003366;
+}
+
+.church-navbar-name .highlight {
+  color: #cc9900;
+}
+
+@keyframes typewriter {
+  0% { width: 0; opacity: 0; }
+  100% { width: 100%; opacity: 1; }
+}
+
+
+/* Nav links */
+.navbar .nav-link {
+  color: #003366 !important;
+  font-weight: 600;
+  margin-left: 14px;
+  transition: 0.3s ease;
+  position: relative;
+}
+
+.navbar .nav-link:hover,
+.navbar .nav-link.active {
+  color: #cc9900 !important;
+}
+
+.navbar .nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #cc9900;
+  transition: 0.3s;
+}
+
+.navbar .nav-link:hover::after {
+  width: 100%;
+}
+
+/* Dropdown hover */
+.nav-item.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+.dropdown-menu {
+  background-color: #000;
+  border: none;
+}
+
+.dropdown-item {
+  color: #fff;
+  font-weight: 500;
+  transition: background 0.3s;
+}
+
+.dropdown-item:hover {
+  background-color: #333;
+}
+
+/* Hamburger full screen menu */
+@media (max-width: 991px) {
+  .navbar-collapse {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgb(21, 56, 117);
+    padding-top: 80px;
+    z-index: 999;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    transition: all 0.4s ease;
+    animation: fadeSlideDown 0.5s ease-in;
+  }
+
+  .navbar-collapse.collapsing,
+  .navbar-collapse.show.removing {
+    animation: fadeOutSlideUp 0.4s ease forwards;
+  }
+
+  .navbar-nav {
+    width: 100%;
+    padding-left: 30px;
+  }
+
+  .navbar-nav .nav-link {
+    font-size: 1.2rem;
+    color: white !important;
+    padding: 12px 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    animation: slideIn 0.5s ease forwards;
+  }
+
+  .navbar-nav .nav-link i {
+    font-size: 1.3rem;
+    color: #cc9900;
+  }
+
+  .close-btn {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 2rem;
+    color: #fff;
+    background: none;
+    border: none;
+    z-index: 1001;
+    transition: transform 0.2s ease;
+  }
+
+  .close-btn:hover {
+    transform: scale(1.2);
+    color: #cc9900;
+  }
+
+  .dropdown-menu {
+    background-color: #111;
+    border: none;
+  }
+
+  .dropdown-item {
+    color: #fff;
+    padding-left: 40px;
+  }
+
+  .mobile-contact-info {
+    padding: 20px 30px;
+    color: white;
+    font-size: 0.95rem;
+  }
+
+  .mobile-contact-info p {
+    margin: 5px 0;
+  }
+
+  .mobile-contact-icons {
+    display: flex;
+    gap: 20px;
+    margin-top: 10px;
+  }
+
+  .mobile-contact-icons a img {
+    height: 22px;
+    width: 22px;
+  }
+}
+
+/* Animations */
+@keyframes fadeSlideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeOutSlideUp {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-40px);
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(-20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translate(-50%, -40%); }
+  to { opacity: 1; transform: translate(-50%, -50%); }
+}
+
+/* Carousel */
+.carousel-container {
+  max-width: 1100px;
+  margin: 40px auto;
+  padding: 0 15px;
+}
+
+.carousel-item {
+  position: relative;
+}
+
+.carousel-inner img {
+  width: 100%;
+  max-height: 700px;
+  object-fit: cover;
+  border-radius: 8px;
+  background-color: #000;
+}
+
+.carousel-item::after {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0, 0, 0, 0.12);
+  backdrop-filter: blur(0.5px);
+  z-index: 1;
+  border-radius: 8px;
+}
+
+/* Theme Tag */
+.theme-tag {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background-color: #003366;
+  color: #fff;
+  padding: 6px 14px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: 5px;
+  z-index: 3;
+}
+
+/* Carousel Caption */
+.carousel-caption {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  text-align: center;
+  width: 100%;
+  padding: 0 20px;
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+.theme-verse-main {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 15px;
+  text-shadow: 2px 2px 6px rgba(0,0,0,0.6);
+}
+
+.theme-verse-ref {
+  display: inline-block;
+  background-color: #c82333;
+  color: #fff;
+  padding: 8px 16px;
+  font-size: 1rem;
+  font-weight: 500;
+  border-radius: 6px;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.3);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .church-navbar-name {
+    font-size: 1rem;
+    white-space: normal;
+    text-align: left;
+  }
+
+  .theme-tag {
+    font-size: 0.9rem;
+    padding: 4px 10px;
+  }
+
+  .theme-verse-main {
+    font-size: 1.3rem;
+  }
+
+  .theme-verse-ref {
+    font-size: 0.9rem;
+    padding: 6px 12px;
+  }
+
+  .carousel-inner img {
+    max-height: 350px;
+  }
+}
+.church-navbar-name {
+  font-size: 1rem;
+  font-weight: bold;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  line-height: 1.2;
+  white-space: normal; /* ensure wrapping */
+  animation: typewriter 2.5s steps(40, end);
+}
+
+.navbar-nav {
+  padding-right: 20px;
+}
+.navbar .nav-link {
+  transition: color 0.3s, transform 0.3s;
+}
+.navbar .nav-link:hover {
+  transform: translateY(-2px);
+}
+church-navbar-name small.church-subtitle {
+  display: block;
+  font-size: 0.7rem;
+  font-weight: 400;
+  color: rgba(0, 0, 0, 0.5);
+  margin-top: 1px;
+  letter-spacing: 0.3px;
+}
+.vision-mission-values-section {
+  background: linear-gradient(to right, #1c1c2b, #24243e);
+  padding: 80px 20px;
+  color: #f0f0f0;
+  position: relative;
+  overflow: hidden;
+  min-height: 100vh;
+}
+
+.section-heading {
+  margin-bottom: 50px;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+.section-subtitle {
+  font-size: 1.1rem;
+  color: #cccccc;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* Scroll Slider Container */
+.scroll-slider {
+  position: relative;
+  height: 420px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Belief Slide */
+.belief-slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transform: translateY(100%);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 30px 20px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+  backdrop-filter: blur(4px);
+}
+
+.belief-slide.active {
+  opacity: 1;
+  transform: translateY(0);
+  z-index: 2;
+}
+
+.belief-slide.out-up {
+  transform: translateY(-100%);
+  opacity: 0;
+  z-index: 1;
+}
+
+.belief-slide.out-down {
+  transform: translateY(100%);
+  opacity: 0;
+  z-index: 1;
+}
+
+/* Icon Styling */
+.belief-slide .icon {
+  margin-bottom: 20px;
+}
+
+.belief-slide .icon i {
+  font-size: 3rem;
+  color: #f39c12; /* default color, can be overridden individually via class */
+}
+
+.belief-slide h3 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-bottom: 15px;
+  color: #ffffff;
+}
+
+.belief-slide p {
+  font-size: 1rem;
+  color: #dddddd;
+  line-height: 1.6;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .section-title {
+    font-size: 2rem;
+  }
+
+  .scroll-slider {
+    height: 420px;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .belief-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transform: translateY(100%);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+    width: 100%;
+    padding: 30px 20px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    backdrop-filter: blur(4px);
+  }
+
+  .belief-slide.active {
+    opacity: 1;
+    transform: translateY(0);
+    z-index: 2;
+  }
+
+  .belief-slide.out-up {
+    transform: translateY(-100%);
+    opacity: 0;
+    z-index: 1;
+  }
+
+  .belief-slide.out-down {
+    transform: translateY(100%);
+    opacity: 0;
+    z-index: 1;
+  }
+}
+.swipe-indicator {
+  position: absolute;
+  bottom: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  color: #cccccc;
+  font-size: 0.9rem;
+  z-index: 5;
+  animation: bounce 2s infinite;
+}
+
+.swipe-indicator i {
+  display: block;
+  font-size: 1.5rem;
+  margin-bottom: 5px;
+  color: #f39c12;
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateX(-50%) translateY(0);
+  }
+  40% {
+    transform: translateX(-50%) translateY(6px);
+  }
+  60% {
+    transform: translateX(-50%) translateY(3px);
+  }
+}
+.nav-link.active {
+  font-weight: bold;
+  color: #0d6efd !important;
+  border-bottom: 2px solid #0d6efd;
+}
+/* Import Roboto Font */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+/* The Church Section */
+.church-about-section {
+  background: url('https://res.cloudinary.com/dljpgzbto/image/upload/v1749700676/istockphoto-2183882967-612x612_b8alxq.jpg') no-repeat center center/cover;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 80vh;
+  opacity: 0;
+  transform: translateY(60px);
+  transition: all 1s ease;
+}
+
+.church-about-section.animate {
+  opacity: 1;
+  transform: translateY(0);
+}
+.church-subtitle{
+  color: #514b4bde;
+}
+.church-about-overlay {
+  background-color: rgba(0, 0, 0, 0.65);
+  backdrop-filter: blur(8px);
+  padding: 60px 20px;
+  width: 100%;
+  text-align: center;
+  border-radius: 12px;
+}
+
+.church-logo {
+  width: 100px;
+  height: auto;
+}
+
+.church-title {
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #ffffff;
+}
+
+.church-description {
+  font-size: 1.05rem;
+  max-width: 750px;
+  margin: auto;
+  line-height: 1.8;
+  color: #f0f0f0;
+}
+
+.btn-light {
+  font-weight: 600;
+  padding: 10px 20px;
+  border-radius: 8px;
+  transition: 0.3s ease;
+}
+
+.btn-light:hover {
+  background-color: #f8f9fa;
+  color: #003366;
+}
+
+.btn-warning {
+  font-weight: 600;
+  padding: 10px 22px;
+  border-radius: 8px;
+  color: #222;
+  background-color: #ffc107;
+  transition: 0.3s ease;
+}
+
+.btn-warning:hover {
+  background-color: #e0a800;
+  color: #000;
+}
+
+/* Church News Section */
+.church-news-section {
+  background-color: #ffffff;
+  padding: 60px 20px;
+}
+
+.news-icon {
+  color: #003366;
+}
+
+.news-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+  color: #003366;
+}
+
+.news-text {
+  font-size: 1rem;
+  max-width: 700px;
+  margin: auto;
+  color: #555555;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .church-title {
+    font-size: 1.8rem;
+  }
+
+  .church-description {
+    font-size: 1rem;
+  }
+
+  .church-logo {
+    width: 80px;
+  }
+
+  .news-title {
+    font-size: 1.5rem;
+  }
+}
+/* Church About Section */
+.church-about-section {
+  background: url('https://res.cloudinary.com/dljpgzbto/image/upload/v1749700676/istockphoto-2183882967-612x612_b8alxq.jpg') no-repeat center center/cover;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 80vh;
+  font-family: 'Roboto', sans-serif;
+}
+
+.church-about-overlay {
+  background-color: rgba(0, 0, 0, 0.65);
+  backdrop-filter: blur(8px);
+  padding: 60px 20px;
+  width: 100%;
+  text-align: center;
+}
+
+.church-logo {
+  width: 100px;
+  height: auto;
+}
+
+.church-title {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.church-description {
+  font-size: 1.05rem;
+  max-width: 750px;
+  margin: auto;
+  color: #f0f0f0;
+  line-height: 1.8;
+}
+
+/* Why Worship With Us Section */
+.why-worship-section {
+  background: linear-gradient(to right, #fdfbfb, #f1f3f5);
+  padding: 80px 20px;
+  font-family: 'Roboto', sans-serif;
+}
+
+.worship-title {
+  font-size: 2.2rem;
+  font-weight: bold;
+  color: #003366;
+}
+
+.worship-subtitle {
+  font-size: 1.1rem;
+  max-width: 700px;
+  margin: 0 auto 40px;
+  color: #333;
+}
+
+.worship-slider {
+  position: relative;
+  height: 400px;
+  overflow: hidden;
+}
+
+.worship-slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  border-radius: 12px;
+  padding: 40px 30px;
+  opacity: 0;
+  transform: translateY(100%);
+  transition: all 0.6s ease;
+}
+
+.worship-slide.active {
+  opacity: 1;
+  transform: translateY(0);
+  z-index: 2;
+}
+
+.worship-slide.out-up {
+  transform: translateY(-100%);
+  opacity: 0;
+}
+
+.worship-slide.out-down {
+  transform: translateY(100%);
+  opacity: 0;
+}
+
+/* Dots */
+.worship-dots {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.dot {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background-color: #ccc;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.dot:hover,
+.active-dot {
+  background-color: #003366;
+}
+
+@media (max-width: 768px) {
+  .worship-slide {
+    position: static;
+    opacity: 1 !important;
+    transform: none !important;
+    margin-bottom: 30px;
+    background: transparent;
+    box-shadow: none;
+  }
+
+  .worship-slider {
+    height: auto;
+  }
+}
+/* Modal Base */
+.verse-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(8px);
+  background-color: rgba(255, 255, 255, 0.3); /* White transparent */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+
+.verse-modal-content {
+  background-color: #fff;
+  padding: 0;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 500px;
+  box-shadow: 0 0 30px rgba(0,0,0,0.5);
+  position: relative;
+}
+
+.close-verse {
+  position: absolute;
+  top: 8px;
+  right: 12px;
+  background: transparent;
+  font-size: 28px;
+  border: none;
+  cursor: pointer;
+  color: #000;
+  z-index: 1;
+}
+
+.animate-left {
+  animation: slideInLeft 0.7s ease forwards;
+}
+
+@keyframes slideInLeft {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.hidden {
+  display: none;
+}
+
+.bible-verse-section {
+  opacity: 0;
+  transform: translateY(100px);
+  transition: all 1s ease;
+}
+
+.bible-verse-section.slide-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+.bible-verse-section {
+  opacity: 0;
+  transform: translateX(100px);
+  transition: all 0.8s ease-out;
+}
+
+.bible-verse-section.slide-in {
+  opacity: 1;
+  transform: translateX(0);
+}
+.gallery-img {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery-img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+.gallery-img {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.gallery-img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(44, 9, 245, 0.15);
+}
+.gallery-img {
+  transition: opacity 0.6s ease-in-out;
+  opacity: 1;
+}
+
+.gallery-img.fade-out {
+  opacity: 0;
+}
+.footer-section a:hover {
+  color: #ffc107 !important;
+  text-decoration: none;
+}
+.footer-section {
+  background-color: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(12px);
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+.footer-section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+/* WHO WE ARE SECTION */
+.who-we-are-section {
+  background-color: #f8f9fc;
+  padding: 60px 20px;
+}
+
+/* Header Section with Background Image + Overlay */
+.who-we-are-header {
+  height: 350px;
+  background: 
+    linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)),
+    url('https://res.cloudinary.com/dipvgaie7/image/upload/v1749910179/who_we_are_tvnmzm.png') center/cover no-repeat;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-align: center;
+  position: relative;
+  margin-bottom: 0;
+}
+
+.who-we-are-header h1 {
+  font-size: 3rem;
+  font-weight: bold;
+  z-index: 2;
+}
+
+.who-we-are-header .lead {
+  font-size: 1.25rem;
+  margin-top: 10px;
+}
+
+.scroll-indicator i {
+  color: white;
+  animation-delay: 1.5s;
+}
+
+/* Divider Styling */
+.custom-divider svg {
+  display: block;
+  width: 100%;
+  height: 80px;
+  margin-top: -1px;
+}
+
+/* Content Blocks */
+.who-we-are-section .content-block {
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05);
+  margin-bottom: 40px;
+  transition: transform 0.3s ease;
+}
+
+.who-we-are-section .content-block:hover {
+  transform: translateY(-6px);
+}
+
+/* Bullet Lists */
+.who-we-are-section ul {
+  list-style-type: disc;
+  padding-left: 1.5rem;
+  margin-top: 10px;
+}
+
+.who-we-are-section ul li {
+  margin-bottom: 0.6rem;
+  line-height: 1.7;
+}
+
+/* CTA Join Us Section */
+.join-us-section {
+  background: linear-gradient(135deg, #02457a, #0386d0);
+  border-radius: 12px;
+  padding: 50px 20px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+}
+
+.join-us-section h3 {
+  font-size: 2rem;
+}
+
+.join-us-section p {
+  font-size: 1.1rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .who-we-are-header h1 {
+    font-size: 2rem;
+  }
+
+  .who-we-are-header .lead {
+    font-size: 1rem;
+  }
+
+  .who-we-are-section {
+    padding: 40px 15px;
+  }
+
+  .who-we-are-section .content-block {
+    padding: 20px;
+  }
+
+  .join-us-section h3 {
+    font-size: 1.5rem;
+  }
+
+  .join-us-section p {
+    font-size: 1rem;
+  }
+}
+/* WHAT WE DO - Header with Background and Blur */
+.what-we-do-header {
+  height: 300px;
+  background: 
+    linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)),
+    url('https://res.cloudinary.com/dipvgaie7/image/upload/v1749905749/gallery2_lh205q.webp') center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-align: center;
+  position: relative;
+  margin-bottom: 40px;
+}
+
+.what-we-do-header h1 {
+  font-size: 3rem;
+  font-weight: bold;
+  margin: 0;
+  z-index: 2;
+}
+
+/* WHAT WE DO Content Section */
+.what-we-do-section {
+  background-color: #ffffff;
+  padding: 60px 20px;
+  color: #333;
+  line-height: 1.8;
+}
+
+/* Responsive Adjustment */
+@media (max-width: 768px) {
+  .what-we-do-header h1 {
+    font-size: 2rem;
+  }
+
+  .what-we-do-section {
+    padding: 40px 15px;
+  }
+}
+ #readContent {
+    scroll-behavior: smooth;
+    padding-right: 10px;
+  }
+
+  .modal-body p {
+    margin-bottom: 1rem;
+    line-height: 1.8;
+  }
+  /* Modal Dialog */
+#readMoreModal .modal-dialog {
+  max-width: 90%;
+  margin: 2rem auto;
+  border-radius: 12px;
+}
+
+/* Modal Content */
+#readMoreModal .modal-content {
+  background: linear-gradient(135deg, #f8f9fa, #ffffff);
+  border-radius: 16px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  position: relative;
+}
+
+/* Modal Header */
+#readMoreModal .modal-header {
+  background-color: #4e5c67;
+  color: white;
+  padding: 1rem 1.5rem;
+  border-bottom: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Modal Title */
+#readMoreModal .modal-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+/* Modal Body */
+#readMoreModal .modal-body {
+  padding: 2rem;
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: #333;
+  max-height: 70vh;
+  overflow-y: auto;
+  position: relative;
+}
+
+/* Progress Bar */
+#scrollProgress {
+  height: 4px;
+  background-color: #007bff;
+  width: 0%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: width 0.2s ease-out;
+}
+
+/* Audio Button */
+#readMoreModal .btn-outline-primary {
+  border-radius: 30px;
+  padding: 0.25rem 0.75rem;
+  font-size: 0.9rem;
+  background-color: lavender;
+}
+
+/* Scrollbar Styling */
+#readMoreModal .modal-body::-webkit-scrollbar {
+  width: 6px;
+}
+#readMoreModal .modal-body::-webkit-scrollbar-thumb {
+  background: rgba(49, 23, 179, 0.2);
+  border-radius: 3px;
+}
+
+/* Close Button */
+#readMoreModal .btn-close {
+  background-color: white;
+  border-radius: 50%;
+}
+#voiceSelect {
+  min-width: 180px;
+}
+.voice-select-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+#voiceSelect {
+  min-width: 180px;
+  max-width: 100%;
+  padding: 6px 10px;
+  font-size: 0.9rem;
+  border-radius: 6px;
+  border: 1px solid #ced4da;
+  background-color: #fff;
+}
+
+@media (max-width: 576px) {
+  .voice-select-wrapper {
+    justify-content: center;
+  }
+
+  #voiceSelect {
+    width: 100%;
+    font-size: 1rem;
+  }
+}
+
+  </style>
+</head>
+<body>
+<!--Navbar-->
+  {% include 'navbar.html' %}
+
+
+<div id="who-we-are-section">
+<section class="who-we-are-header text-white d-flex align-items-center justify-content-center text-center">
+  <div class="overlay"></div>
+  <div class="position-relative z-2">
+    <h1 class="display-4 fw-bold animate__animated animate__fadeInDown">Who We Are</h1>
+    <p class="lead animate__animated animate__fadeIn animate__delay-1s">Empowered by Christ, Committed to the Gospel</p>
+    <div class="scroll-indicator mt-3">
+      <i class="fas fa-chevron-down fa-2x animate__animated animate__bounce animate__infinite"></i>
+    </div>
+  </div>
+</section>
+
+<!-- SVG Divider -->
+<div class="custom-divider">
+  <svg viewBox="0 0 1440 100" preserveAspectRatio="none">
+    <path d="M0,0 C480,100 960,0 1440,100 L1440,0 L0,0 Z" fill="#f8f9fa"></path>
+  </svg>
+</div>
+
+<!-- Content Section -->
+<section class="who-we-are-section py-5">
+  <div class="container">
+
+    <!-- Mission -->
+    <div class="content-block animate__animated animate__fadeInUp">
+      <h3 class="text-primary fw-bold mb-3"><i class="fas fa-cross me-2"></i>Mission Statement</h3>
+      <p>
+        <strong>CAC (International)</strong>, as part of the body of Christ, exists to bring salvation in Christ to all persons in the world by preaching and teaching the gospel of Jesus Christ as in the Holy Scriptures — the final authority in all matters of faith and conduct — disciplining believers towards Christian maturity and worshiping the Triune God: Father, Son, and Holy Spirit.
+      </p>
+      <p>
+        Its objectives are threefold: <strong>spiritual</strong> (doctrinal teachings), and <strong>social</strong> (socio-economic impact).
+      </p>
+    </div>
+
+    <!-- Vision -->
+    <div class="content-block animate__animated animate__fadeInUp animate__delay-1s">
+      <h3 class="text-success fw-bold mb-3"><i class="fas fa-eye me-2"></i>Our Vision</h3>
+      <ul>
+        <li>Knowing Christ and making disciples of all nations, tribes, and peoples.</li>
+        <li>Evangelizing and planting self-supporting churches both locally and abroad.</li>
+        <li>Providing a conducive environment for attracting and retaining diverse people.</li>
+        <li>Building chapels, offices, schools, and housing to support growth.</li>
+        <li>Training dynamic pastorate and lay leadership through programs.</li>
+        <li>Supporting the needy through outreach and charity.</li>
+        <li>Collaborating with the government in impactful areas.</li>
+      </ul>
+    </div>
+
+    <!-- Values -->
+    <div class="content-block animate__animated animate__fadeInUp animate__delay-2s">
+      <h3 class="text-warning fw-bold mb-3"><i class="fas fa-hand-holding-heart me-2"></i>Our Values</h3>
+      <ul>
+        <li>Unity of the Godhead and the Trinity.</li>
+        <li>The necessity of repentance and regeneration.</li>
+        <li>Life, death, resurrection, and second coming of Jesus Christ.</li>
+        <li>Sanctification and justification through Christ.</li>
+        <li>Baptism and the gifts of the Holy Spirit.</li>
+        <li>The Lord’s Supper and baptism by immersion.</li>
+        <li>Authority of the Holy Scriptures.</li>
+        <li>Leadership by ordained ministers (Apostles, Pastors, etc.).</li>
+        <li>The possibility of falling from grace.</li>
+        <li>Healing and provision through faith.</li>
+        <li>Faithful giving through tithes and offerings.</li>
+      </ul>
+    </div>
+
+    <!-- CTA Join Us -->
+    <div class="join-us-section text-white text-center mt-5 py-5 rounded">
+      <h3 class="fw-bold mb-3">Join Us In Worship & Service</h3>
+      <p>Be a part of a growing community rooted in the Word and committed to transformation through Christ.</p>
+      <a href="contact.html" class="btn btn-light fw-bold mt-3">Get Involved</a>
+    </div>
+
+  </div>
+</section>
+</div>
+
+<div id="what-we-do-section">
+
+<!-- What We Do Header with Background Image -->
+<section id="what-we-do-section" class="what-we-do-section">
+  <div class="what-we-do-header">
+    <h1 class="display-4 fw-bold">Know our History</h1>
+  </div>
+  <div class="container py-5">
+    <div class="animate__animated animate__fadeInUp">
+      <h5 class="text-secondary text-uppercase">Here is our history and heritage</h5>
+      <p>
+        The Christ Apostolic Church International (CAC), a non-governmental organization, was founded by Apostle Peter Anim in 1917.
+        He and his Faith Tabernacle Church (which later became known as the Christ Apostolic Church) are credited with the origins
+        of Classical Pentecostalism in Ghana.<button class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#readMoreModal">
+    📖 Read Mode
+  </button>
+      </p>
+      <p>
+        From a little beginning in Asamankese in the Eastern Region, the church has grown and become the mother of all Pentecostal
+        churches in the country. CACI currently has 3000 assemblies in Ghana and overseas.
+      </p>
+      <p>
+        An interest in a Christian periodical, “The Sword of the Spirit”, led him to fraternize, through correspondence, with its editor,
+        Pastor A. Clark, founder of the Faith Tabernacle Church, Philadelphia. Though non-Pentecostal, Faith Tabernacle placed much
+        emphasis on faith healing and holiness. Peter Anim embraced these teachings and was healed from a chronic stomach disorder
+        and guinea worm infestation miraculously through prayer.
+      </p>
+      <p>
+        Born on February 4, 1890, Peter Anim was educated in Presbyterian schools and worked for a while for the Basel Mission Factory.
+        Ill health forced his return to Boso in 1916. After personal losses, he married Madam Esther Osimpo and had a son, Moses Appiah Anim.
+      </p>
+      <p>
+        In 1917, Anim began a healing ministry at Asamankese. In 1931, Pastor George Perfect from the Apostolic Church of Bradford, UK,
+        visited Ghana, strengthening ties between the two churches. This affiliation was strengthened by the outpouring of the Holy Ghost in 1932,
+        marked by a powerful experience by Stephen Owiredu.
+      </p>
+      <p>
+        Anim’s revival meetings became widely known after miraculous healings, leading to rapid growth. The first church building was constructed
+        on land donated by the chief of Asamankese. Revival meetings were reportedly attended by both believers and unbelievers who witnessed 
+        supernatural events such as a "Pillar of Fire."
+      </p>
+      <p>
+        In 1937, missionary James McKeown was sent by Bradford. Despite his dedication, a doctrinal disagreement regarding medical treatment
+        caused a split. Anim's followers saw medical care as unfaithful. McKeown recovered and returned to serve but later moved to Winneba,
+        eventually founding the Church of Pentecost.
+      </p>
+      <p>
+        Anim's group renamed themselves Christ Apostolic Church in 1939 through prophetic guidance. The church developed and formalized 
+        its theology, leading to its registration in 1960. The church, from humble beginnings, became a Classical Pentecostal denomination with
+        international reach.
+      </p>
+      <p>
+        Today, the Christ Apostolic Church has more than 2000 branches globally and a membership of over 300,000 across Ghana and beyond.
+        Its head office is located at Osu, Accra.
+      </p>
+      <blockquote class="blockquote mt-4">
+        <p class="mb-0">Let us go forward in this battle fortified by conviction that those who labour in the service of a great and good cause will never fail.</p>
+      </blockquote>
+    </div>
+  </div>
+</section>
+<!-- Read Mode Button -->
+<!-- Read Mode Button -->
+<div class="text-center my-4">
+  
+</div>
+
+<!-- Read Mode Modal -->
+<!-- Read Mode Modal -->
+<div class="modal fade" id="readMoreModal" tabindex="-1" aria-labelledby="readMoreModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-xl">
+    <div class="modal-content">
+      <div class="modal-header d-flex flex-column flex-md-row justify-content-between align-items-start align-items-md-center">
+        <h5 class="modal-title mb-2 mb-md-0" id="readMoreModalLabel">History & Heritage</h5>
+        <div class="voice-select-wrapper d-flex flex-wrap gap-2 justify-content-md-end w-100">
+          <select id="voiceSelect" class="form-select form-select-sm" style="min-width: 180px;">
+          <option disabled selected>Change Voice</option>
+          </select>
+
+          <button type="button" class="btn btn-sm btn-outline-primary" onclick="toggleReading()">
+            🔊 <span id="audioToggleText">Read Aloud</span>
+          </button>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" onclick="stopReading()"></button>
+        </div>
+      </div>
+      <div class="modal-body position-relative" id="readContent" style="max-height: 70vh; overflow-y: auto;">
+        <div id="scrollProgress" style="height: 4px; background-color: #007bff; width: 0%; position: absolute; top: 0; left: 0;"></div>
+        <p><strong> The Christ Apostolic Church International (CAC), a non-governmental organization, was founded by Apostle Peter Anim in 1917.
+        He and his Faith Tabernacle Church (which later became known as the Christ Apostolic Church) are credited with the origins
+        of Classical Pentecostalism in Ghana.</p>
+<p>
+        From a little beginning in Asamankese in the Eastern Region, the church has grown and become the mother of all Pentecostal
+        churches in the country. CACI currently has 3000 assemblies in Ghana and overseas.
+      </p>
+      <p>
+        An interest in a Christian periodical, “The Sword of the Spirit”, led him to fraternize, through correspondence, with its editor,
+        Pastor A. Clark, founder of the Faith Tabernacle Church, Philadelphia. Though non-Pentecostal, Faith Tabernacle placed much
+        emphasis on faith healing and holiness. Peter Anim embraced these teachings and was healed from a chronic stomach disorder
+        and guinea worm infestation miraculously through prayer.
+      </p>
+      <p>
+        Born on February 4, 1890, Peter Anim was educated in Presbyterian schools and worked for a while for the Basel Mission Factory.
+        Ill health forced his return to Boso in 1916. After personal losses, he married Madam Esther Osimpo and had a son, Moses Appiah Anim.
+      </p>
+      <p>
+        In 1917, Anim began a healing ministry at Asamankese. In 1931, Pastor George Perfect from the Apostolic Church of Bradford, UK,
+        visited Ghana, strengthening ties between the two churches. This affiliation was strengthened by the outpouring of the Holy Ghost in 1932,
+        marked by a powerful experience by Stephen Owiredu.
+      </p>
+      <p>
+        Anim’s revival meetings became widely known after miraculous healings, leading to rapid growth. The first church building was constructed
+        on land donated by the chief of Asamankese. Revival meetings were reportedly attended by both believers and unbelievers who witnessed 
+        supernatural events such as a "Pillar of Fire."
+      </p>
+      <p>
+        In 1937, missionary James McKeown was sent by Bradford. Despite his dedication, a doctrinal disagreement regarding medical treatment
+        caused a split. Anim's followers saw medical care as unfaithful. McKeown recovered and returned to serve but later moved to Winneba,
+        eventually founding the Church of Pentecost.
+      </p>
+      <p>
+        Anim's group renamed themselves Christ Apostolic Church in 1939 through prophetic guidance. The church developed and formalized 
+        its theology, leading to its registration in 1960. The church, from humble beginnings, became a Classical Pentecostal denomination with
+        international reach.
+      </p>
+      <p>
+        Today, the Christ Apostolic Church has more than 2000 branches globally and a membership of over 300,000 across Ghana and beyond.
+        Its head office is located at Osu, Accra.
+      </p>        <blockquote class="blockquote mt-4">
+          <p class="mb-0">Let us go forward in this battle fortified by conviction that those who labour in the service of a great and good cause will never fail.</p>
+        </blockquote>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+  <footer id="site-footer" class="footer-section text-dark pt-5 pb-3">
+  <div class="container">
+    <div class="row text-center text-md-start align-items-center gy-4">
+      <!-- Logo and Name -->
+      <div class="col-md-4">
+        <div class="d-flex align-items-center justify-content-center justify-content-md-start">
+          <img src="https://res.cloudinary.com/dipvgaie7/image/upload/v1749906357/CAC-LOGO_egrhmz.webp" alt="CACI Logo" width="60" height="60" class="me-2">
+          <div>
+            <h5 class="mb-0">Christ Apostolic Church</h5>
+            <small>International – USA</small>
+          </div>
+        </div>
+      </div>
+
+      <!-- Contact Info -->
+      <div class="col-md-4 text-center">
+        <p class="mb-1"><strong>Address:</strong> 483 East Tremont Ave, Bronx NY 10457</p>
+        <p class="mb-1"><strong>Email:</strong> <a href="mailto:info@caciusa.org" class="text-dark text-decoration-underline">info@caciusa.org</a></p>
+        <p class="mb-1"><strong>Phone:</strong> 123-456-7890</p>
+        <p class="mb-0"><strong>Hours:</strong> Mon–Fri 9:00AM – 5:00PM</p>
+      </div>
+
+      <!-- Social Links -->
+      <div class="col-md-4 text-center text-md-end">
+        <p class="mb-2">Follow Us:</p>
+        <a href="https://www.facebook.com/share/1AnA9qxJFH/?mibextid=wwXIfr" target="_blank" class="text-dark me-3 fs-4"><i class="fab fa-facebook"></i></a>
+        <a href="https://www.instagram.com/caciusa?igsh=MXdyNzNvdWJuY3FyYg==" target="_blank" class="text-dark me-3 fs-4"><i class="fab fa-instagram"></i></a>
+        <a href="https://youtube.com/@caciusamedia?si=aTtZWA2k9aU9ugaP" target="_blank" class="text-dark fs-4"><i class="fab fa-youtube"></i></a>
+      </div>
+    </div>
+
+    <hr class="border-secondary my-4">
+
+    <div class="text-center small">
+      &copy; <span id="year"></span> Christ Apostolic Church International – USA. All rights reserved. <br>
+      Website by <a href="mailto:cytech76@gmail.com" class="text-primary fw-bold text-decoration-none">CYTECH</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Load Navbar
+  fetch("navbar.html")
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById("navbar-placeholder").innerHTML = data;
+
+      const currentPage = window.location.pathname.split("/").pop();
+      const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
+
+      navLinks.forEach(link => {
+        const href = link.getAttribute('href');
+        if (href && currentPage === href) {
+          link.classList.add('active');
+        }
+      });
+    });
+
+  // Set Year in Footer
+  document.addEventListener("DOMContentLoaded", () => {
+    document.getElementById("year").textContent = new Date().getFullYear();
+  });
+
+  // Section Toggle Logic
+  function handleHashChange() {
+    const hash = window.location.hash;
+    const whoWeAre = document.getElementById("who-we-are-section");
+    const whatWeDo = document.getElementById("what-we-do-section");
+
+    if (hash === "#what-we-do") {
+      whoWeAre.style.display = "none";
+      whatWeDo.style.display = "block";
+      document.getElementById("what-we-do").scrollIntoView({ behavior: "smooth" });
+    } else if (hash === "#who-we-are") {
+      whatWeDo.style.display = "none";
+      whoWeAre.style.display = "block";
+      document.getElementById("who-we-are").scrollIntoView({ behavior: "smooth" });
+    } else {
+      whoWeAre.style.display = "block";
+      whatWeDo.style.display = "block";
+    }
+  }
+
+  document.addEventListener("DOMContentLoaded", handleHashChange);
+  window.addEventListener("hashchange", handleHashChange);
+
+  // Speech & Voice Logic
+  let synth = window.speechSynthesis;
+  let utterance;
+  let isReading = false;
+  let voices = [];
+
+  function populateVoiceList() {
+    voices = synth.getVoices();
+    const voiceSelect = document.getElementById("voiceSelect");
+    if (!voiceSelect) return;
+
+    voiceSelect.innerHTML = "";
+    voices.forEach((voice, index) => {
+      const option = document.createElement("option");
+      option.value = index;
+      option.textContent = `${voice.name} (${voice.lang})${voice.default ? " — Default" : ""}`;
+      voiceSelect.appendChild(option);
+    });
+  }
+
+  if (typeof speechSynthesis !== "undefined" && speechSynthesis.onvoiceschanged !== undefined) {
+    speechSynthesis.onvoiceschanged = populateVoiceList;
+  }
+
+  function toggleReading() {
+    const content = document.getElementById('readContent').innerText;
+    const voiceIndex = document.getElementById("voiceSelect")?.value || 0;
+
+    if (!isReading) {
+      utterance = new SpeechSynthesisUtterance(content);
+      if (voices[voiceIndex]) utterance.voice = voices[voiceIndex];
+      utterance.rate = 1;
+      utterance.pitch = 1;
+
+      synth.speak(utterance);
+      isReading = true;
+      document.getElementById("audioToggleText").innerText = "Stop Reading";
+    } else {
+      stopReading();
+    }
+  }
+
+  function stopReading() {
+    if (isReading) {
+      synth.cancel();
+      isReading = false;
+      document.getElementById("audioToggleText").innerText = "Read Aloud";
+    }
+  }
+
+  // Modal Auto-Scroll & Reset
+  const modal = document.getElementById('readMoreModal');
+  let autoScrollInterval;
+
+  modal.addEventListener('shown.bs.modal', () => {
+    const content = document.getElementById('readContent');
+    autoScrollInterval = setInterval(() => {
+      content.scrollTop += 1;
+    }, 50);
+  });
+
+  modal.addEventListener('hidden.bs.modal', () => {
+    clearInterval(autoScrollInterval);
+    stopReading();
+    document.getElementById('readContent').scrollTop = 0;
+    document.getElementById('scrollProgress').style.width = '0%';
+  });
+
+  // Scroll Progress Bar
+  const readContent = document.getElementById('readContent');
+  const progressBar = document.getElementById('scrollProgress');
+
+  readContent.addEventListener('scroll', function () {
+    const scrolled = (this.scrollTop / (this.scrollHeight - this.clientHeight)) * 100;
+    progressBar.style.width = scrolled + '%';
+  });
+
+  // Init voice list on load
+  window.onload = populateVoiceList;
+</script>
+
+  <!-- Animate.css -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="{{ url_for('static', filename='js/homepage.js') }}"></script>
+</body>
+</html>
