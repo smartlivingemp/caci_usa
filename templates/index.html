@@ -1209,6 +1209,8 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 </script>
 <script>
+const animatedSections = document.querySelectorAll('.church-about-section, .bible-verse-section');
+animatedSections.forEach(section => observer.observe(section));
 document.addEventListener("DOMContentLoaded", function () {
   // Show footer
   document.querySelector('.footer-section').classList.add('visible');
